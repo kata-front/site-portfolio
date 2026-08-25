@@ -67,7 +67,7 @@ const Contact: React.FC = () => {
 
     const mailtoLink = `mailto:${data.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-    window.location.href = mailtoLink;
+    window.location.assign(mailtoLink)
   });
 
   return (

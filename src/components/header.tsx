@@ -2,14 +2,13 @@ import { useGSAP } from "@gsap/react";
 import { useRef, useState, type FC } from "react";
 import { gsap } from "gsap";
 import { useMediaQuery } from "react-responsive";
-import { Link } from "react-router";
 const Header: FC = () => {
   const headerRef = useRef<HTMLDivElement>(null);
 
   const isMobile = useMediaQuery({ maxWidth: 768 });
 
   const prevScroll = useRef(0);
-  const [_, setScrolled] = useState(false);
+  const [, setScrolled] = useState(false);
 
   useGSAP(() => {
     const handleScroll = () => {
