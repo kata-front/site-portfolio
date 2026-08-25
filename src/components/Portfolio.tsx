@@ -13,29 +13,37 @@ interface PortfolioItem {
 
 const mockPortfolioItems: PortfolioItem[] = [
   {
-    title: "Project One Title",
+    title: "3D Task System",
     description:
-      "A brief, engaging description of the first impressive project, highlighting its core functionality and design achievement.",
-    tags: ["React", "Node.js", "TailwindCSS"],
-    imageUrl: "/images/placeholder1.jpg",
-    link: "#project1",
+      "Interactive task management system with real-time updates and 3D visualization.",
+    tags: ["React", "Nest.js", "SCSS", "Three.js", "Docker"],
+    imageUrl: "images/projects-previews/task-system.png",
+    link: "/task-system",
   },
   {
-    title: "Data Dashboard",
+    title: "Lending Page",
     description:
-      "Interactive data visualization dashboard built for real-time monitoring. Scalable and responsive design.",
-    tags: ["Vue.js", "D3.js", "API Integration"],
-    imageUrl: "/images/placeholder2.jpg",
+      "Responsive landing page with specific design.",
+    tags: ["React", "TypeScript", "GSAP", "SCSS", "vite", "Adaptation"],
+    imageUrl: "images/projects-previews/gl.png",
     link: "#project2",
   },
   {
-    title: "E-commerce Platform",
+    title: "Messanger",
     description:
-      "Full-featured e-commerce site with payment gateway integration and complex user management.",
-    tags: ["Next.js", "Stripe", "TypeScript"],
-    imageUrl: "/images/placeholder3.jpg",
+      "Messenger clone with Next.js, Socket.io, TypeScript, Redux, Tailwind CSS, Prisma, and Jose.",
+    tags: ["Next.js", "Socket.io", "TypeScript", "Redux", "Tailwind CSS", "Prisma", "Jose"],
+    imageUrl: "/images/projects-previews/messanger.png",
     link: "#project3",
   },
+  {
+    title: "3D Task System",
+    description:
+      "Interactive task management system with real-time updates and 3D visualization.",
+    tags: ["React", "Nest.js", "SCSS", "Three.js", "Docker"],
+    imageUrl: "images/projects-previews/task-system.png",
+    link: "#project4",
+  }
 ];
 
 const Portfolio: React.FC = () => {
@@ -106,11 +114,6 @@ const Portfolio: React.FC = () => {
                   src={item.imageUrl}
                   alt={`Image for ${item.title}`}
                   className="w-full h-56 object-cover transition duration-700 group-hover:scale-110"
-                  onError={(e) => {
-                    e.currentTarget.onerror = null;
-                    e.currentTarget.src =
-                      "https://via.placeholder.com/600x400/1f2937/9ca3af?text=Project+Image";
-                  }}
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-gray-800/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
                   <div className="max-w-full">

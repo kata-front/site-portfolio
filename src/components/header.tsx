@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import { useRef, useState, type FC } from "react";
 import { gsap } from "gsap";
 import { useMediaQuery } from "react-responsive";
+import { Link } from "react-router";
 const Header: FC = () => {
   const headerRef = useRef<HTMLDivElement>(null);
 
@@ -58,15 +59,15 @@ const Header: FC = () => {
 
       {!isMobile ? (
         <div className="flex gap-3 text-sm *:cursor-pointer">
-          <span className='relative hover:-translate-y-1 after:content-[""] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-white after:transition-all after:duration-300 hover:after:w-full'>
+          <a href={'/'} className='relative hover:-translate-y-1 after:content-[""] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-white after:transition-all after:duration-300 hover:after:w-full'>
             Обо мне
-          </span>{" "}
-          <span className='relative transition-all hover:-translate-y-1 after:content-[""] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-white hover:after:w-full after:transition-all after:duration-300'>
+          </a>
+          <a href={'#projects'} className='relative transition-all hover:-translate-y-1 after:content-[""] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-white hover:after:w-full after:transition-all after:duration-300'>
             Проекты
-          </span>
-          <span className='relative transition-all hover:-translate-y-1 after:content-[""] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-white hover:after:w-full after:transition-all after:duration-300'>
+          </a>
+          <a href={'#contacts'} className='relative transition-all hover:-translate-y-1 after:content-[""] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-white hover:after:w-full after:transition-all after:duration-300'>
             Контакты
-          </span>
+          </a>
         </div>
       ) : (
         <div className="flex flex-col w-4.5 h-3 items-center justify-between">

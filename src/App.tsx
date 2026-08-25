@@ -1,6 +1,7 @@
 import Header from "./components/header"
 import Hero from "./components/Hero"
 import Portfolio from "./components/Portfolio"
+import Contact from "./components/Contact"
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -13,6 +14,7 @@ function App() {
       <Header />
       <Hero /> 
       <Portfolio />
+      <Contact />
     </>
   )
 }
