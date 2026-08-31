@@ -38,12 +38,11 @@ const Hero = () => {
 
   return (
     <section
-      className="relative h-screen flex items-center justify-center overflow-hidden bg-cover bg-center"
+      className="relative h-screen flex items-center justify-center overflow-hidden bg-cover bg-center p-10"
       style={{ backgroundImage: `url(${heroBg})` }}
     >
-      <div className="absolute inset-0 bg-black/60"></div>
 
-      <div className="relative z-10 text-center text-white p-4 max-w-4xl">
+      <div className="z-10 text-center text-white p-4 max-w-4xl">
         <h1
           ref={titleRef}
           className="text-6xl sm:text-7xl lg:text-8xl font-extrabold mb-3 tracking-tighter"

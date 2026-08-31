@@ -2,49 +2,8 @@ import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-interface PortfolioItem {
-  title: string;
-  description: string;
-  tags: string[];
-  imageUrl: string;
-  link: string;
-}
-
-const mockPortfolioItems: PortfolioItem[] = [
-  {
-    title: "3D Task System",
-    description:
-      "Interactive task management system with real-time updates and 3D visualization.",
-    tags: ["React", "Nest.js", "SCSS", "Three.js", "Docker"],
-    imageUrl: "images/projects-previews/task-system.png",
-    link: "/task-system",
-  },
-  {
-    title: "Lending Page",
-    description:
-      "Responsive landing page with specific design.",
-    tags: ["React", "TypeScript", "GSAP", "SCSS", "vite", "Adaptation"],
-    imageUrl: "images/projects-previews/gl.png",
-    link: "#project2",
-  },
-  {
-    title: "Messanger",
-    description:
-      "Messenger clone with Next.js, Socket.io, TypeScript, Redux, Tailwind CSS, Prisma, and Jose.",
-    tags: ["Next.js", "Socket.io", "TypeScript", "Redux", "Tailwind CSS", "Prisma", "Jose"],
-    imageUrl: "/images/projects-previews/messanger.png",
-    link: "#project3",
-  },
-  {
-    title: "3D Task System",
-    description:
-      "Interactive task management system with real-time updates and 3D visualization.",
-    tags: ["React", "Nest.js", "SCSS", "Three.js", "Docker"],
-    imageUrl: "images/projects-previews/task-system.png",
-    link: "#project4",
-  }
-];
+import { Link } from "react-router";
+import { mockPortfolioItems } from "../utils/api";
 
 const Portfolio: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -139,14 +98,14 @@ const Portfolio: React.FC = () => {
                   ))}
                 </div>
 
-                <a
-                  href={item.link}
+                <Link
+                  to={`${item.id}`}
                   className="block w-full text-center py-3 mt-2 text-lg font-semibold rounded-lg transition duration-300 
                              bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-500/30 
                              transform hover:scale-[1.02] hover:shadow-indigo-500/50 active:scale-95"
                 >
                   Смотреть проект &rarr;
-                </a>
+                </Link>
               </div>
             </div>
           ))}

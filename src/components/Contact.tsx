@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { FiMail, FiSend } from "react-icons/fi";
 import { useForm } from "react-hook-form";
 import { BsGithub } from "react-icons/bs";
+import Input from "./UI/Input";
 
 const Contact: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -113,7 +114,7 @@ const Contact: React.FC = () => {
 
           <div
             ref={githubRef}
-            className="flex items-center justify-center gap-3"
+            className="flex items-center justify-center gap-3 "
           >
             <BsGithub className="w-5 h-5 text-indigo-400" />
             <a
@@ -128,14 +129,14 @@ const Contact: React.FC = () => {
         <div ref={formRef} className="bg-gray-900 p-8 rounded-xl shadow-lg">
           <h3 className="text-2xl font-bold mb-6">Отправить сообщение</h3>
           <form className="space-y-4" onSubmit={onSubmit}>
-            <input
+            <Input
               {...register("name", { required: "Это поле обязательно" })}
               type="text"
               placeholder="Ваше имя"
-              className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500"
+              className=""
             />
             <span className="text-red-500 mb-5">{errors.name?.message}</span>
-            <input
+            <Input
               {...register("email", {
                 required: "Это поле обязательно",
                 pattern: {
@@ -148,16 +149,15 @@ const Contact: React.FC = () => {
               className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500"
             />
             <span className="text-red-500 mb-5">{errors.email?.message}</span>
-            <textarea
+            <Input
               {...register("message", { required: "Это поле обязательно" })}
-              rows={4}
               placeholder="Сообщение"
               className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 resize-none"
             />
             <span className="text-red-500 mb-5">{errors.message?.message}</span>
             <button
               type="submit"
-              className="w-full py-3 bg-indigo-600 hover:bg-indigo-700 rounded-lg font-bold transition"
+              className="cursor-pointer w-full py-3 bg-indigo-600 focus:border-indigo-500 hover:-translate-y-1 focus:-translate-y-1 hover:scale-105 focus:scale-105 hover:shadow-2xl focus:shadow-2xl hover:border-indigo-500 transition-all duration-300 rounded-lg font-bold"
             >
               Отправить
             </button>
